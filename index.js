@@ -20,5 +20,5 @@ function tinhHoaHong() {
 }
 let ds = +prompt("Nhập vào doanh số tháng này của bạn:");
 let hh        = tinhHoaHong();
-alert(`Hoa hồng nhận được cho  doanh số ${ds} là: ${hh}`);
+alert("Hoa hồng nhận được cho  doanh số ${ds} là: ${hh}");
 
