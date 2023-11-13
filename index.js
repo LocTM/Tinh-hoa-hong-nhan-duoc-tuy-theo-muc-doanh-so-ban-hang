@@ -1,4 +1,3 @@
-
 let doanhSo = +prompt("Nhập vào doanh số");
 let mocDoanhSo1 = 1000;
 let mocDoanhSo2 = 5000;
@@ -10,23 +9,17 @@ let tiLe4 = 0.2;
 let hoaHong = 0;
 tinhHoaHong(doanhSo);
 function tinhHoaHong(doanhSo) {
-
-    if (doanhSo <= mocDoanhSo1) {
+    if (doanhSo < mocDoanhSo1) {
         hoaHong = doanhSo * tiLe1;
     }
-
-    if (doanhSo > mocDoanhSo1 && doanhSo <= mocDoanhSo2) {
+    else if (doanhSo < mocDoanhSo2) {
         hoaHong = mocDoanhSo1 * tiLe1 + (doanhSo - mocDoanhSo1) * tiLe2;
     }
-
-    if (doanhSo > mocDoanhSo2 && doanhSo <= mocDoanhSo3) {
+    else if (doanhSo < mocDoanhSo3) {
         hoaHong = mocDoanhSo1 * tiLe1 + (mocDoanhSo2 - mocDoanhSo1) * tiLe2 + (doanhSo - mocDoanhSo2) * tiLe3;
     }
-
-    if (doanhSo > mocDoanhSo3) {
+    else  {
         hoaHong = mocDoanhSo1 * tiLe1 + (mocDoanhSo2 - mocDoanhSo1) * tiLe2 + (mocDoanhSo3 - mocDoanhSo2) * tiLe3 + (doanhSo - mocDoanhSo3) * tiLe4;
     }
-
     alert(`Hoa hồng nhận được cho doanh số ${doanhSo} là: ${hoaHong}`);
 }
-
