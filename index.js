@@ -1,24 +1,32 @@
-function tinhHoaHong() {
-    let mds1 = 1000;
-    let mds2 = 5000;
-    let mds3 = 10000;
 
-    let hh1 = 0.05;
-    let hh2 = 0.1;
-    let hh3 = 0.15;
-    let hh4 = 0.2;
+let doanhSo = +prompt("Nhập vào doanh số");
+let mocDoanhSo1 = 1000;
+let mocDoanhSo2 = 5000;
+let mocDoanhSo3 = 10000;
+let tiLe1 = 0.05;
+let tiLe2 = 0.1;
+let tiLe3 = 0.15;
+let tiLe4 = 0.2;
+let hoaHong = 0;
+tinhHoaHong(doanhSo);
+function tinhHoaHong(doanhSo) {
 
-    if (ds <= mds1) {
-        return ds * hh1;
-    } else if (ds <= mds2) {
-        return mds1 * hh1 + (ds - mds1) * hh2;
-    } else if (ds <= mds3) {
-        return mds1 * hh1 + (mds2 - mds1) * hh2 + (ds - mds2) * hh3;
-    } else {
-        return mds1 * hh1 + (mds2 - mds1) * hh2 + (mds3 - mds2) * hh3 + (ds - mds3) * hh4;
+    if (doanhSo <= mocDoanhSo1) {
+        hoaHong = doanhSo * tiLe1;
     }
+
+    if (doanhSo > mocDoanhSo1 && doanhSo <= mocDoanhSo2) {
+        hoaHong = mocDoanhSo1 * tiLe1 + (doanhSo - mocDoanhSo1) * tiLe2;
+    }
+
+    if (doanhSo > mocDoanhSo2 && doanhSo <= mocDoanhSo3) {
+        hoaHong = mocDoanhSo1 * tiLe1 + (mocDoanhSo2 - mocDoanhSo1) * tiLe2 + (doanhSo - mocDoanhSo2) * tiLe3;
+    }
+
+    if (doanhSo > mocDoanhSo3) {
+        hoaHong = mocDoanhSo1 * tiLe1 + (mocDoanhSo2 - mocDoanhSo1) * tiLe2 + (mocDoanhSo3 - mocDoanhSo2) * tiLe3 + (doanhSo - mocDoanhSo3) * tiLe4;
+    }
+
+    alert(`Hoa hồng nhận được cho doanh số ${doanhSo} là: ${hoaHong}`);
 }
-let ds = +prompt("Nhập vào doanh số tháng này của bạn:");
-let hh        = tinhHoaHong();
-alert("Hoa hồng nhận được cho  doanh số ${ds} là: ${hh}");
 
